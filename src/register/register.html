@@ -26,30 +26,45 @@
               required=""
             />
             <input
-              type="password"
-              name="password"
-              id="password"
-              class="block w-full content-center my-3.5 text-black placeholder:text-black pl-[20px] border-gray-300 bg-neutral-300 text-xl p-2.5 rounded-3xl"
-              placeholder="Password"
+              type="email"
+              name="email"
+              id="email"
+              class="block w-full content-center my-3.5 text-black placeholder:text-black pl-[20px] border-gray-300 bg-neutral-300 text-xl p-2.5 rounded-3xl text:"
+              placeholder="Email"
               required=""
             />
-            <div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="block w-full content-center my-3.5 text-black placeholder:text-black pl-[20px] border-gray-300 bg-neutral-300 text-xl p-2.5 rounded-3xl"
+                placeholder="Password"
+                required=""
+              />
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+                class="block w-full content-center my-3.5 text-black placeholder:text-black pl-[20px] border-gray-300 bg-neutral-300 text-xl p-2.5 rounded-3xl"
+                placeholder="Confirm Password"
+                required=""
+              />
               <button
-                onclick="validation()"
+                onclick="register()"
                 type="button"
                 class="my-4 w-full text-white bg-sky-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xl px-5 py-2.5 text-center rounded-3xl"
               >
-                Login
+                Register
               </button>
               <div class="ml-3 text-sm text-center">
-                <label for="newmember" class="text-gray-500 dark:text-gray-300"
-                  >You don’t have an account?</label
+                <label for="member" class="text-gray-500 dark:text-gray-300"
+                  >Already have an account?</label
                 >
                 <a
-                  href="../src/register/register.html"
+                  href="../index.html"
                   class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
-                  SignUp</a
+                  Login</a
                 >
               </div>
             </div>
@@ -58,5 +73,5 @@
       </div>
     </div>
   </body>
-  <script src="/src/login.js"></script>
+  <script src="/src/register/register.js"></script>
 </html>

@@ -4,31 +4,73 @@
       "id": 1,
       "username": "Kumar",
       "email": "Kumar@gmail.com",
-      "password": "123456"
+      "password": "Ku123mar"
     },
     {
       "id": 2,
       "username": "jamal",
       "email": "jamal@gmail.com",
-      "password": "qwerty"
+      "password": "Ja45ma3l"
     },
     {
       "id": 3,
       "username": "Abdul",
       "email": "dobleh1@gmail.com",
-      "password": "123456"
+      "password": "1Abdul65"
     },
     {
       "id": 4,
       "username": "joko",
-      "password": "tes123",
+      "password": "tes123Jo",
       "email": "joko@gmail.com"
     },
     {
       "username": "cihuy123",
-      "password": "cihuy123",
+      "password": "Cihuy123",
       "email": "cihuy123@gmail.com",
       "id": 5
+    },
+    {
+      "username": "mesel",
+      "email": "mesel.ghea.h.n@gmail.com",
+      "password": "Mesgel09",
+      "id": 6
+    },
+    {
+      "username": "ghea ",
+      "email": "mesgel@gmail.com",
+      "password": "ghea",
+      "id": 7
+    },
+    {
+      "username": "ghea",
+      "email": "ghea@gmail.com",
+      "password": "ghea123",
+      "id": 8
+    },
+    {
+      "username": "ghea",
+      "email": "ghea@gmail.com",
+      "password": "ghea",
+      "id": 9
+    },
+    {
+      "username": "mesel",
+      "email": "mesgel@gmail.com",
+      "password": "ghea",
+      "id": 10
+    },
+    {
+      "username": "mesel",
+      "email": "admin@gmail.com",
+      "password": "mesgel",
+      "id": 11
+    },
+    {
+      "username": "ghea",
+      "email": "ghea@gmail.com",
+      "password": "mesgel09",
+      "id": 12
     }
   ],
   "movies": [
