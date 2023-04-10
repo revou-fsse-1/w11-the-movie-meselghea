@@ -10,5 +10,5 @@ How to Use
    cd json-server
    ```
 4. ```
-   json-server --watch db-movies.json --port 3004```
+   json-server --watch db-movies.json --port 3004
 5. Access : https://w11-meselghea.netlify.app/
