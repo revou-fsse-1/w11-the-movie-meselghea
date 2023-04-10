@@ -14,4 +14,4 @@ npm install -g json-server
 json-server --watch db-movies.json
 ```
 
-- Test the API: The JSON server should now be running at http://localhost:3000. You can test the API by making HTTP requests to this URL using a tool like cURL or a web browser. The JSON server will respond with the data from your JSON file.
+- Test the API: The JSON server should now be running at http://localhost:3004. You can test the API by making HTTP requests to this URL using a tool like cURL or a web browser. The JSON server will respond with the data from your JSON file.

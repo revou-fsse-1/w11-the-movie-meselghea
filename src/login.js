@@ -16,7 +16,7 @@ async function validation() {
       const user = await response.json();
       if (user[0].password == userPassword) {
         alert("success!");
-        window.location.href = "/src/home/home.html";
+        window.location.href = "/src/app/home.html";
       } else {
         alert("Invalid username or password!");
       }

@@ -9,7 +9,7 @@
   <body class="overflow-x-hidden">
     <!--header--->
     <header
-      class="flex items-center justify-between max-w-screen-xl py-6 mx-auto max-md:m-8"
+      class="flex items-center justify-between max-w-screen-xl py-6 mx-auto"
     >
       <!--H1 : The Movie Watchlist-->
       <div>
@@ -25,10 +25,12 @@
         <div
           class="relative flex items-center w-full h-12 ml-auto overflow-hidden md:aspect-auto rounded-2xl bg-neutral-300 focus-within:shadow-lg"
         >
-          <div class="grid w-12 h-full text-black place-items-center">
+          <div
+            class="grid w-12 h-full text-black max-sm:w-4 place-items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
+              class="w-6 h-6 max-sm:w-3 max-sm:h-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="black"
@@ -47,16 +49,21 @@
             class="w-full pr-2 text-sm text-black outline-none bg-neutral-300 peer"
             placeholder="Search a movie or a series"
           />
+          <div id="allmovie">
+            <a href="javascript : movie (1)" value="" />
+            <a href="javascript : movie (1)" value="" />
+            <a href="javascript : movie (1)" value="fung" />
+          </div>
         </div>
       </div>
       <!--watchlist-->
       <div class="">
-        <a href="/src/watchlistpage/watchlistpage.html">
+        <a href="/src/app/watchlistpage.html">
           <button
-            class="inline-flex items-center px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded-2xl hover:bg-gray-400"
+            class="inline-flex justify-center px-4 py-2 font-bold text-gray-800 bg-gray-300 max-md: max-sm:px-1 rounded-2xl max-sm:rounded-full hover:bg-gray-400"
           >
             <svg
-              class="w-4 h-4 mr-2 fill-current"
+              class="w-4 h-4 mr-2 fill-current max-md:mr-0"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
             >
@@ -71,42 +78,35 @@
     </header>
 
     <main
-      class="items-center max-w-screen-xl py-6 mx-auto max-md:m-8 text-slate-700 xl:px-0"
+      class="grid justify-center max-w-screen-xl grid-cols-2 gap-8 py-6 mx-auto max-sm:grid-cols-1 max-md:m-3 text-slate-700 xl:px-0"
     >
       <!-- grid 1-->
-      <div id="items-center main-content" class="py-10 mx-auto">
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-4">
-          <!---Currently Watching-->
-          <section id="currently-watching" class="col-auto md:col-span-5">
-            <h3 class="text-lg font-semibold">Currently Watching</h3>
-            <!--card-->
-            <div
-              id="currently-watching-card"
-              class="grid grid-cols-3 gap-5 mt-4 md:overflow-auto md:flex-nowrap"
-            ></div>
-          </section>
-          <!---Suggested To Watch-->
-          <section id="suggested-watch" class="col-auto md:col-span-7">
-            <h3 class="text-lg font-semibold">Suggested to Watch</h3>
-            <!--card-->
-            <div
-              id="suggested-watch-card"
-              class="flex flex-wrap gap-4 mt-4 overflow-normal md:overflow-auto md:flex-nowrap"
-            ></div>
-          </section>
-        </div>
-        <!--Previously Watched--->
-        <section id="previously-watched" class="mt-10">
-          <h3 class="text-lg font-semibold">Previously Watched</h3>
-          <!--card-->
-          <div
-            id="previously-watched-card"
-            class="flex flex-wrap gap-4 mt-4 overflow-normal"
-          ></div>
-        </section>
+      <div class="font-medium mb-7">
+        <p class="mb-4 text-lg">Currently Watching</p>
+        <div
+          class="flex flex-wrap gap-8 max-sm:justify-center maxscrollbar-hide"
+          id="current-watch-list"
+        ></div>
+      </div>
+
+      <div class="font-medium">
+        <p class="mb-4 text-lg">Suggested to Watch</p>
+        <div
+          class="flex flex-wrap gap-8 max-sm:justify-center scrollbar-hide"
+          id="suggested-watch-list"
+        ></div>
+      </div>
+
+      <div class="font-medium md:col-span-2">
+        <p class="mb-4 text-lg">Previously Watched</p>
+        <div
+          class="flex flex-wrap gap-8 max-sm:justify-center scrollbar-hide"
+          id="previous-watch-list"
+        ></div>
       </div>
     </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/src/home/home.js"></script>
 </html>
