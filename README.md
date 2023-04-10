@@ -1,1 +1,9 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/ZWjvzVL5)
+How to Use
+
+# The Movie Watchlist
+
+- 1. Clone : https://github.com/revou-fsse-1/w11-the-movie-meselghea
+- 2. `npm install`
+- 3. `cd json-server`
+- 4. `json-server --watch db-movies.json --port 3004`
+- 5. Access : https://w11-meselghea.netlify.app/
