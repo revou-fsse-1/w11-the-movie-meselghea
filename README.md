@@ -2,13 +2,6 @@ How to Use
 
 # The Movie Watchlist
 
-<<<<<<< HEAD
-- 1. Clone : https://github.com/revou-fsse-1/w11-the-movie-meselghea
-- 2. `npm install`
-- 3. `cd json-server`
-- 4. `json-server --watch db-movies.json --port 3004`
-- 5. Access : https://w11-meselghea.netlify.app/
-=======
 1. Clone : https://github.com/revou-fsse-1/w11-the-movie-meselghea
 2. ```
     npm install
@@ -18,5 +11,5 @@ How to Use
    ```
 4. ```
    json-server --watch db-movies.json --port 3004
-5. Access : https://w11-meselghea.netlify.app/
->>>>>>> a94aaaac87de14961cea4c1ac81f3407f2713165
+5. https://meselgheaw11.netlify.app/src/
+
