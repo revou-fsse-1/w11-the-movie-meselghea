@@ -90,7 +90,23 @@ async function renderPreviousWatch() {
 async function renderMovieDetail() {
   const params = new URLSearchParams(window.location.search);
   const movieId = params.get("id");
+  localStorage.setItem("movieId", `${movieId}`);
   console.log("movieid", movieId);
+  const loadToLocalStorage = () => {
+    fetch(`http://localhost:3004/movies/${movieId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("movieTitle", `${data.title}`); //title
+        localStorage.setItem("movieImage", `${data.image}`); //image
+        localStorage.setItem("movieSynopsis", `${data.synopsis}`); //synopsis
+        localStorage.setItem("movieGenre", `${data.genre}`); //genre
+        localStorage.setItem("movieProduction", `${data.production}`);
+        localStorage.setItem("movieTrailer", `${data.trailer}`); //trailer
+        localStorage.setItem("movieRating", `${data.rating}`); //rating
+        localStorage.setItem("movieYear", `${data.year}`); //year
+      });
+  };
+  loadToLocalStorage();
 
   let movie = await getMovieById(movieId);
   let movieComponent = movieDetailComponent(movie);
@@ -98,6 +114,30 @@ async function renderMovieDetail() {
   movieWrapper.innerHTML = movieComponent;
 }
 
+//add watchlist
+function addWatchlist() {
+let movieId = localStorage.getItem("movieId");
+  fetch("http://localhost:3004/watchlist", {
+    method: "POST",
+    body: JSON.stringify({
+      id: movieId,
+      title: localStorage.getItem("movieTitle"),
+      image: localStorage.getItem("movieImage"),
+      synopsis: localStorage.getItem("movieSynopsis"),
+      genre: localStorage.getItem("movieGenre"),
+      trailer: localStorage.setItem("movieTrailer", "data.trailer"),
+      production: localStorage.getItem("movieProduction"),
+      rating: localStorage.getItem("movieRating"),
+      year: localStorage.getItem("movieYear"),
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    }
+  })
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
 // Watchlist
 async function renderMoviesList() {
   let movies = await getAllWatchlist();
@@ -123,7 +163,7 @@ function movieCardComponent(movie) {
         <a class="h-64 w-44 rounded-3xl relative overflow-hidden" href="moviepage.html?id=${
           movie.id
         }">
-        <img class="w-full object-cover h-64 rounded-3xl" src="${
+        <img class="w-44 object-cover h-64 rounded-3xl" src="${
           movie.image
         }" alt="Cover movie ${movie.title}">
         <p class="text-transparent hover:text-black hover:bg-yellow-400/70 text-4xl font-bold absolute top-0 flex justify-center items-center w-full h-full">
@@ -138,7 +178,7 @@ function movieWithRatingCardComponent(movie) {
         <a class="h-64 w-44 rounded-3xl relative overflow-hidden" href="moviepage.html?id=${
           movie.id
         }">
-        <img class="w-full object-cover h-64 rounded-3xl" src="${
+        <img class="w-44 object-cover h-64 rounded-3xl" src="${
           movie.image
         }" alt="Cover movie ${movie.title}">
         <p class="text-transparent hover:text-black hover:bg-yellow-400/70 text-4xl font-bold absolute top-0 flex justify-center items-center w-full h-full">
@@ -177,30 +217,12 @@ function movieDetailComponent(movie) {
   </div>
     `;
 }
-function addWatchlist() {
-  const params = new URLSearchParams(window.location.search);
-  const movieId = params.get("id");
-  fetch("http://localhost:3004/watchlist", {
-    method: "POST",
-    body: JSON.stringify({
-      id: movieId
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => alert("Successfully added to watchlist"));
-};
-addToWatchListButton.addEventListener("click", addWatchlist);
 
-const searchIcon = document.getElementById("search-icon");
+const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
 
-searchIcon.addEventListener("click", function () {
-  if (searchInput.style.display === "block") {
-    searchInput.style.display = "none";
-  } else {
-    searchInput.style.display = "block";
-  }
-})
+searchButton.addEventListener("click", () => {
+  searchInput.classList.toggle("max-[390px]:hidden");
+  searchInput.focus();
+});
+

@@ -78,9 +78,13 @@
       </div>
     </header>
     <main
-      class="flex flex-wrap max-w-screen-xl gap-8 py-6 mx-auto max-md:flex-none scrollbar-hide"
-      id="movie-list"
-    ></main>
+      class="grid max-w-screen-xl grid-cols-6 gap-8 py-6 mx-auto max-sm:justify-center max-sm:grid-cols-1 max-md:m-3 text-slate-700 xl:px-0"
+    >
+      <div
+        class="flex flex-wrap gap-8 max-sm:justify-center scrollbar-hide"
+        id="movie-list"
+      ></div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
